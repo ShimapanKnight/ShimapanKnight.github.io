@@ -1,6 +1,6 @@
 #hover-content {
     display:none;
 }
-#parent:hover #hover-content {
+#player:hover #hover-content {
     display:block;
 }
