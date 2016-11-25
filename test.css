@@ -17,7 +17,9 @@ nav {
 
 nav ul {
   text-align: left;
-  background: linear-gradient(to right, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.38) 50%,rgba(255,255,255,0) 100%);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.13) 50%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.13) 50%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.13) 50%,rgba(255,255,255,0) 100%);
   width: 100%;
 }
 
