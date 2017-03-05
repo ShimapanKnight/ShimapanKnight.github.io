@@ -40,15 +40,15 @@
     <div class="resizable";  style="overflow:hidden; height:100vh; width:20%";>
       <iframe id="twitch-chat" src="https://www.twitch.tv/shimapanknight/chat" frameborder="0" style="overflow:hidden; position:absolute; bottom:0; right:0; height:50vh; width:20%;"></iframe>
       <iframe id="gg-chat" src="https://goodgame.ru/chat/33016/" frameborder="0" style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:20%;"></iframe>
+      <script>
+           $(function () {
+           $(".resizable").resizable({
+           animate: true,
+           animateEasing: 'swing',
+           animateDuration: 500
+          });
+        });
+      </script>
     </div>
   </body>
-  <script>
-    $(function () {
-      $(".resizable").resizable({
-        animate: true,
-        animateEasing: 'swing',
-        animateDuration: 500
-      });
-    });
-  </script>
 </html>
