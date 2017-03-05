@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <title>Shimapan.tv</title>
     <link rel="stylesheet" type="text/css" href="test.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     <script language="JavaScript" type="text/javascript">
       <!--
       function changeFrame(newPage) {
         document.getElementById("player-frame").src = newPage;
       }
       //-->
-
     </script>
   </head>
 
@@ -40,5 +42,11 @@
       <iframe id="gg-chat" src="https://goodgame.ru/chat/33016/" frameborder="0" style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:20%; resize: both;"></iframe>
     </div>
   </body>
-
+$(function () {
+    $(".resizable").resizable({
+        animate: true,
+        animateEasing: 'swing',
+        imateDuration: 500
+    });
+});
 </html>
