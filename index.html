@@ -1,15 +1,54 @@
 <!doctype html>
 <html>
 
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <title>Shimapan.tv</title>
-</head>
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      <!--
+      function changeFrame(newPage) {
+        document.getElementById("player-frame").src = newPage;
+      }
+      //-->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+      $(function () {
+        $(".resizable").resizable({
+        animate: true,
+        animateEasing: 'swing',
+        animateDuration: 500
+        });
+      });
+     </script>
+  </head>
 
-<body style="margin:0px;padding:0px;overflow:hidden">
-	<iframe id="player-frame" src="https://api.cybergame.tv/p/embed.php?c=sranknight&amp;w=100pc&amp;h=100pc&amp;type=embed" frameborder="0" style="overflow:hidden; height:100vh; width:80%"></iframe>
-	<iframe id="twitch-chat" src="https://www.twitch.tv/shimapanknight/chat" frameborder="0" style="overflow:hidden; position:absolute; bottom:0; right:0; height:100vh; width:20%;"></iframe>
-	<iframe id="gg-chat" src="http://goodgame.ru/chat2/ShimapanKnight/" frameborder="0" style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:20%;"></iframe>
-</body>
-
+  <body style="margin:0px;padding:0px;overflow:hidden">
+    <div id="player"; style="overflow:hidden; height:100vh; width:80%"; class="resizable";>
+      <div   width: 100%; height: 100%;>
+        <iframe src="https://api.cybergame.tv/p/embed.php?c=sranknight&type=embed&w=100pc&h=100pc&auto=true&advforced=true" id="player-frame" frameborder="0" style="overflow:hidden; height:100vh; width:100%;">
+          Деменг уходи.
+        </iframe>
+      </div>
+      <div id="hover-content">
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="http://api.cybergame.tv/p/embed.php?c=sranknight&type=embed&w=100pc&h=100pc&auto=true&advforced=true" id="CyberGame" onClick="changeFrame(this.href); return false;">CyberGame</a>
+            </li>
+            <li>
+              <a href="https://goodgame.ru/player?33016" id="GoodGame" onClick="changeFrame(this.href); return false;">GoodGame</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="resizable";  style="overflow:hidden; height:100vh; width:20%";>
+      <iframe id="twitch-chat" src="https://www.twitch.tv/shimapanknight/chat" frameborder="0" style="overflow:hidden; position:absolute; bottom:0; right:0; height:50vh; width:20%;"></iframe>
+      <iframe id="gg-chat" src="https://goodgame.ru/chat/33016/" frameborder="0" style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:20%;"></iframe>
+    </div>
+  </body>
 </html>
