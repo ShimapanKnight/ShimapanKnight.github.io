@@ -1,43 +1,47 @@
 <!doctype html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <title>Shimapan.tv</title>
-    <link rel="stylesheet" type="text/css" href="test.css">
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="res.css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script language="JavaScript" type="text/javascript">
-      <!--
       function changeFrame(newPage) {
         document.getElementById("player-frame").src = newPage;
-      }
-      //-->
+      };
     </script>
     <script language="JavaScript" type="text/javascript">
       $(function () {
         $(".resizable").resizable({
-        animate: true,
+		handles: "e",
+		animate: true,
         animateEasing: 'swing',
         animateDuration: 500
         });
       });
      </script>
+	 <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "monstercat"
+      });
+    </script>
   </head>
 
   <body>
-    <div>
-      <div id="player"; class="resizable"; style="overflow:hidden; height:100vh; width:80%">
-        <iframe src="https://api.cybergame.tv/p/embed.php?c=sranknight&type=embed&w=100pc&h=100pc&auto=true&advforced=true&nick=" id="player-frame" frameborder="0" style="overflow:hidden; height:100vh; width:100%;"></iframe>
+      <div class="resizable"; style="overflow:hidden; position:absolute; top:0; left:0; height:100%; width:80%;">
+        <iframe id="player"; src="https://api.cybergame.tv/p/embed.php?c=sranknight&type=embed" id="player-frame" frameborder="0" style="height:100%; width:100%; overflow:hidden;"></iframe>
       </div>
-      <div style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:auto;">
-        <iframe id="twitch-chat" src="https://www.twitch.tv/shimapanknight/chat/" frameborder="0" style="overflow:hidden; position:absolute; bottom:0; right:0; height:50vh; width:auto;"></iframe>
+      <div style="position:absolute; top:0; right:0; height:50vh; width:20%; display: inline-block;">
+        <iframe id="ShimapanKnight" src="https://www.twitch.tv/embed/shimapanknight/chat" style="height:100%; width:100%; overflow:hidden;" frameborder="0"></iframe>
+	  </div>
+	  <div style="position:absolute; bottom:0; right:0; height:50%; width:20%; display: inline-block;">
+        <iframe id="gg-chat" src="https://goodgame.ru/chat/33016/" style="height:100%; width:100%; overflow:hidden;" frameborder="0"></iframe>
       </div>
-      <div style="overflow:hidden; position:absolute; bottom:0; right:0; height:50vh; width:auto;">
-        <iframe id="gg-chat" src="https://goodgame.ru/chat/33016/" frameborder="0" style="overflow:hidden; position:absolute; top:0; right:0; height:50vh; width:auto;"></iframe>
-      </div>
-    </div>
       <div id="hover-content">
         <nav id="menu">
           <ul>
