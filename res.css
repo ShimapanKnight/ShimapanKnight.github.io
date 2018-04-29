@@ -1,0 +1,7 @@
+.ui-resizable-helper {
+    border: 7px solid #EFEFEF; 
+}
+.resizable {
+	width: 150px; 
+	height: 150px; 
+}
